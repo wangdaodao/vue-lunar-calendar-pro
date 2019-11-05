@@ -11,7 +11,10 @@
 
 ```
 npm i vue-lunar-calendar-pro --save
-cnpm i vue-lunar-calendar-pro --save  //国内镜像
+
+// or 
+
+cnpm i vue-lunar-calendar-pro --save
 ```
 
 #### script
@@ -24,15 +27,15 @@ cnpm i vue-lunar-calendar-pro --save  //国内镜像
 #### 全局使用
 
 ```
-//main.js
+// main.js
 import Vue from 'vue'
 import App from './App.vue'
-//...
+// ...
 
 import Calandar from 'vue-lunar-calendar-pro'
 Vue.use(Calandar)
 
-//...
+// ...
 
 new Vue({
   el: '#app',
@@ -49,7 +52,6 @@ new Vue({
 </template>
 
 <script>
-
   export default {
     name: 'App'
   }
