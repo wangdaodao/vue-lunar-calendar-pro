@@ -24,10 +24,10 @@ cnpm i vue-lunar-calendar-pro --save
 
 ```html
 <!-- 这里会始终引用最新版本 -->
-<script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'>
+<script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'></script>
 
-<!-- 这里会引用1.0.7版本 -->
-<script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.7/dist/vue-calendar.js'>
+<!-- 这里会引用 1.0.7 版本 -->
+<script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.7/dist/vue-calendar.js'></script>
 ```
 
 ### 使用
