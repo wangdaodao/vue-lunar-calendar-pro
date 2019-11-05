@@ -23,7 +23,11 @@ cnpm i vue-lunar-calendar-pro --save
 🚩🚩🚩 建议使用 CDN 引入组件的用户在链接地址上锁定版本，以免将来组件升级时受到非兼容性更新的影响。锁定版本的方法请查看 [unpkg.com](unpkg.com)。
 
 ```html
+<!-- 这里会始终引用最新版本 -->
 <script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'>
+
+<!-- 这里会引用 1.0.7 版本 -->
+<script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.7/dist/vue-calendar.js'>
 ```
 
 ### 使用
