@@ -1,0 +1,172 @@
+$--color-primary: #1890FF !default;
+$--color-white: #fff!default;
+$--color-success:#66BF16 !default;
+$--calendar-weekend-background-color :#efefef !default;
+$--border-color-base:#D2D2D2 !default;
+$--calendar-selected-background-color: mix($--color-white, $--color-primary, 90%) !default;
+$--calendar-selected-font-color :$--color-primary;
+$--color-success-lighter : mix($--color-white, $--color-success, 90%) !default;
+$--background-color-darken: #E5E5E5 !default;
+$--color-text-placeholder: #999999 !default;
+
+@mixin float($float:left) {
+  float: $float;
+  display: inline;
+}
+
+// clear
+@mixin clear {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html,body{
+  background-color: #fff;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.calendar-pro {
+  background-color:#fff;
+  width: 100%;
+  height: 100%;
+  &__title {
+    @include clear;
+    margin-bottom: 20px;
+  }
+  &__title-info {
+    @include float;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  &__tool{
+    @include float(right);
+  }
+  &.showWeek{
+    .weekend{
+      background-color: $--calendar-weekend-background-color;
+    }
+  }
+  &__body {
+    table{
+      border-collapse:collapse;
+      th{
+        padding: 10px 0;
+        font-weight: normal;
+      }
+      td{
+        position: relative;
+        border: 1px solid $--border-color-base;
+        width: 300px;
+        cursor: pointer;
+        &:hover{
+          .day-box{
+            background-color: $--calendar-selected-background-color;
+          }
+        }
+        .day-box{
+          position: relative;
+          height: 68px;
+          padding: 10px;
+          font-size: 14px;
+          &.highlighter{
+            background-color: $--color-success-lighter;
+            .info-date{
+              color: $--color-success;
+            }
+          }
+          &.select{
+            width: auto;
+            background-color: $--calendar-selected-background-color;
+            .info-date{
+              color:$--calendar-selected-font-color;
+            }
+          }
+          &.disabled{
+            cursor: not-allowed;
+            background-color: $--background-color-darken;
+            color: $--color-text-placeholder;
+          }
+          &.other-month-day{
+            opacity: 0.6;
+          }
+          &.today{
+            outline: 2px solid $--color-primary;
+            z-index: 2;
+          }
+        }
+        .info-date{
+          font-size: 18px;
+          font-weight: bolder;
+        }
+        .info-festival{
+          margin-top: 3px;
+          text-align: center;
+        }
+        .info-lunar{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+        .info-term{
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+        }
+        
+      }
+    }
+  }
+}
