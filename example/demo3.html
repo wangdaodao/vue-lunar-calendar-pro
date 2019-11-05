@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设置周起始日</title>
+</head>
+<body>
+<script src="./lib/vue.min.js"></script>
+<script src="../dist/vue-calendar.js"></script>
+<div id="app">
+  <calendar width="900px" height="600px" :first-day-of-week="1" :select-date="date"></calendar>
+</div>
+<script>
+  Vue.use(Calendar)
+  new Vue({
+    el: '#app',
+    data: {
+      date: ["2019-09-07"]
+    }
+  })
+</script>
+</body>
+</html>

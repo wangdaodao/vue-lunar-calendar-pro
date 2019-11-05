@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基本多选</title>
+</head>
+<body>
+<script src="./lib/vue.min.js"></script>
+<script src="../dist/vue-calendar.js"></script>
+<div id="app">
+  <calendar width="900px" height="600px" multiple :select-date="date"></calendar>
+</div>
+<script>
+  Vue.use(Calendar)
+  new Vue({
+    el: '#app',
+    data: {
+      date: [ "2019-09-07", "2019-10-10", "2019-10-16", "2019-10-15", "2019-10-22", "2019-10-18" ] 
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Render方法</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="./lib/vue.min.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../dist/vue-calendar.js"></script>
+<div id="app">
+  <el-row style="margin-bottom:20px">
+    <el-date-picker
+      v-model="value1"
+      @change="changeDate"
+      type="month"
+      value-format="yyyy-MM"
+      placeholder="选择月份">
+    </el-date-picker>
+  </el-row>
+  <calendar width="900px" height="600px" ref="calendar" multiple :select-date="date"  :show-title="false">
+      <template slot="dateCell" slot-scope="{date}">
+          <el-popover
+            placement="right"
+            width="400"
+            trigger="click">
+            <dl>
+              <dt>属性：</dt>
+              <dd>date：{{date.date}}</dd>
+              <dd>year：{{date.year}}</dd>
+              <dd>month：{{date.month}}</dd>
+              <dd>day：{{date.day}}</dd>
+              <dd>weekDay：{{date.weekDay}}</dd>
+              <dd>gzD：{{date.lunar.gzD}}</dd>
+              <dd>gzY：{{date.lunar.gzY}}</dd>
+              <dd>lunarMonthChiness：{{date.lunar.lunarMonthChiness}}</dd>
+              <dd>lunarDayChiness：{{date.lunar.lunarDayChiness}}</dd>
+              <dd>animal：{{date.lunar.animal}}</dd>
+              <dd>week：{{date.lunar.week}}</dd>
+              <dd>start：{{date.lunar.start}}</dd>
+            </dl>
+            <span slot="reference" class="obj">点击</span>
+          </el-popover>
+        </template>
+  </calendar>
+</div>
+<script>
+  Vue.use(Calendar)
+  new Vue({
+    el: '#app',
+    data: {
+      value1: "",
+      date: ["2019-09-30","2019-09-28","2019-09-25","2019-10-01"]
+    },
+    methods: {
+      changeDate(val){
+        console.log("val", val)
+        var dateArr = val.split("-");
+        this.$refs.calendar.render(dateArr[0], dateArr[1]);
+      }
+    }
+  })
+</script>
+<style>
+.obj{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 9;
+  font-size: 12px;
+  color:
+  #d2d2d2;
+}
+</style>
+</body>
+</html>

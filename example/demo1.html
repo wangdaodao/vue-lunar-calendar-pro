@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>基本单选</title>
 </head>
 <body>
 <script src="./lib/vue.min.js"></script>
 <script src="../dist/vue-calendar.js"></script>
 <div id="app">
-  <calendar width="840px" height="600px"/>
+  <calendar width="900px" height="600px" :select-date="date"></calendar>
 </div>
 <script>
-
   Vue.use(Calendar)
-
   new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+      date: ["2019-09-07"]
+    }
   })
 </script>
 </body>
