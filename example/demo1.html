@@ -9,13 +9,15 @@
 </head>
 <body>
 <div id="app">
-  <calendar width="900px" height="600px" :select-date="date"></calendar>
+  <calendar width="900px" height="600px" :default-date="defaultDate" :select-date="date"></calendar>
+  <p class="demonstration">默认日期：{{defaultDate}}</p>
   <p class="demonstration">选中日期：{{date}}</p>
 </div>
 <script>
   new Vue({
     el: '#app',
     data: {
+      defaultDate:"2018-06-26",
       date: ["2019-09-07"]
     }
   })

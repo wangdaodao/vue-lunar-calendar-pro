@@ -1,7 +1,7 @@
 {
   "name": "vue-lunar-calendar-pro",
   "description": "A lunar calendar component for Vue.js",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "scripts": {

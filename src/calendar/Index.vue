@@ -516,11 +516,9 @@ export default {
       this.$emit("month-change", this.renderYear, month);
     },
     defaultDate(date) {
-      // var date = new Date(date);
-
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-
+      var day = new Date(date);
+      var year = day.getFullYear();
+      var month = day.getMonth() + 1;
       this.render(year, month);
     }
   }

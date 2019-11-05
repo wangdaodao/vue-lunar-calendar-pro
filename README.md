@@ -94,8 +94,9 @@ demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo1.html](h
 
 ```html
 <template>
-  <calendar :select-date="date"></calendar>
-  
+  <calendar :select-date="date" :default-date="defaultDate"></calendar>
+
+  <p class="demonstration">默认日期：{{defaultDate}}</p>
   <p class="demonstration">选中日期：{{date}}</p>
 </template>
 
@@ -103,6 +104,7 @@ demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo1.html](h
   export default {
     data() {
       return {
+        defaultDate:"2018-06-26",
         date: ["2019-09-07"]
       }
     },
