@@ -12,6 +12,13 @@ npm i vue-lunar-calendar-pro --save
 cnpm i vue-lunar-calendar-pro --save  //国内镜像
 ```
 
+### 使用
+
+```
+import Calandar from 'vue-lunar-calendar-pro'
+Vue.use(Calandar)
+```
+
 🎉 觉得好用给一个 [star](https://github.com/wangdaodao/vue-lunar-calendar-pro) 哦~~ 🎉
 
 ### 基本单选
