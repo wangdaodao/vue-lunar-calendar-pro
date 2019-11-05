@@ -10,7 +10,7 @@
 
 #### npm
 
-```
+```bash
 npm i vue-lunar-calendar-pro --save
 
 // or 
@@ -19,7 +19,7 @@ cnpm i vue-lunar-calendar-pro --save
 ```
 
 #### script
-```
+```html
 <script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'>
 ```
 
@@ -27,7 +27,7 @@ cnpm i vue-lunar-calendar-pro --save
 
 #### 全局使用
 
-```
+```js
 // main.js
 import Vue from 'vue'
 import App from './App.vue'
@@ -44,7 +44,7 @@ new Vue({
 })
 ```
 
-```
+```html
 <!--app.vue-->
 <template>
   <div id="app">
@@ -60,7 +60,7 @@ new Vue({
 ```
 
 #### 本地注册
-```
+```html
 <!--app.vue-->
 <template>
   <div id="app">
