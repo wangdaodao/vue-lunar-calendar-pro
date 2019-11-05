@@ -93,11 +93,11 @@ new Vue({
 demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo1.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo1.html)
 
 ```html
-<calendar :select-date="date"></calendar>
-
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
+<template>
+  <calendar :select-date="date"></calendar>
+  
+  <p class="demonstration">选中日期：{{date}}</p>
+</template>
 
 <script>
   export default {
@@ -117,11 +117,11 @@ demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo1.html](h
 demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo2.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo2.html)
 
 ```html
-<calendar multiple :select-date="date"></calendar>
+<template>
+  <calendar multiple :select-date="date"></calendar>
 
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
+  <p class="demonstration">选中日期：{{date}}</p>
+</template>
 
 <script>
   export default {
@@ -141,12 +141,11 @@ demo1: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo2.html](h
 demo3: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo3.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo3.html)
 
 ```html
-<calendar :first-day-of-week="1" ref="calendar" :select-date="date">
-</calendar>
+<template>
+  <calendar :first-day-of-week="1" ref="calendar" :select-date="date"></calendar>
 
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
+  <p class="demonstration">选中日期：{{date}}</p>
+</template>
 
 <script>
   export default {
@@ -166,14 +165,12 @@ demo3: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo3.html](h
 demo4: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo4.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo4.html)
 
 ```html
-<calendar multiple :select-date="date" :highlighter-date="highlighter"></calendar>
+<template>
+  <calendar multiple :select-date="date" :highlighter-date="highlighter"></calendar>
 
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
-<el-row class="demonstration">
-高亮日期：{{highlighter}}
-</el-row>
+  <p class="demonstration">选中日期：{{date}}</p>
+  <p class="demonstration">高亮日期：{{highlighter}}</p>
+</template>
 
 <script>
   export default {
@@ -194,14 +191,12 @@ demo4: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo4.html](h
 demo5: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo5.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo5.html)
 
 ```html
-<calendar multiple :select-date="date" :disabled-date="disableddate"></calendar>
+<template>
+  <calendar multiple :select-date="date" :disabled-date="disableddate"></calendar>
 
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
-<el-row class="demonstration">
-不可选日期：{{disableddate}}
-</el-row>
+  <p class="demonstration">选中日期：{{date}}</p>
+  <p class="demonstration">不可选日期：{{disableddate}}</p>
+</template>
 
 <script>
   export default {
@@ -222,18 +217,13 @@ demo5: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo5.html](h
 demo6: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo6.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo6.html)
 
 ```html
-<calendar ref="calendar" multiple  :select-date="date" max-date="2019-12-31" min-date="2019-05-01" :disabled-date="disableddate">
-</calendar>
+<template>
+  <calendar ref="calendar" multiple  :select-date="date" max-date="2019-12-31" min-date="2019-05-01" :disabled-date="disableddate"></calendar>
 
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
-<el-row class="demonstration">
-日期区间：2019-05-01 至 2019-12-31
-</el-row>
-<el-row class="demonstration">
-不可选日期：{{disableddate}}
-</el-row>
+  <p class="demonstration">选中日期：{{date}}</p>
+  <p class="demonstration">日期区间：2019-05-01 至 2019-12-31</p>
+  <p class="demonstration">不可选日期：{{disableddate}}</p>
+</template>
 
 <script>
   export default {
@@ -254,47 +244,45 @@ demo6: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo6.html](h
 demo7: [https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo7.html](https://blog.wangdaodao.com/vue-lunar-calendar-pro/example/demo7.html)
 
 ```html
+<template>
+  <p style="margin-bottom:20px">
+    <el-date-picker
+      v-model="value1"
+      @change="changeDate"
+      type="month"
+      value-format="yyyy-MM"
+      placeholder="选择月份">
+    </el-date-picker>
+  </p>
 
-<el-row style="margin-bottom:20px">
-  <el-date-picker
-    v-model="value1"
-    @change="changeDate"
-    type="month"
-    value-format="yyyy-MM"
-    placeholder="选择月份">
-  </el-date-picker>
-</el-row>
+  <calendar ref="calendar" multiple :select-date="date"  :show-title="false">
+    <template slot="dateCell" slot-scope="{date}">
+      <el-popover
+        placement="right"
+        width="400"
+        trigger="click">
+        <dl>
+          <dt>属性：</dt>
+          <dd>date：{{date.date}}</dd>
+          <dd>year：{{date.year}}</dd>
+          <dd>month：{{date.month}}</dd>
+          <dd>day：{{date.day}}</dd>
+          <dd>weekDay：{{date.weekDay}}</dd>
+          <dd>gzD：{{date.lunar.gzD}}</dd>
+          <dd>gzY：{{date.lunar.gzY}}</dd>
+          <dd>lunarMonthChiness：{{date.lunar.lunarMonthChiness}}</dd>
+          <dd>lunarDayChiness：{{date.lunar.lunarDayChiness}}</dd>
+          <dd>animal：{{date.lunar.animal}}</dd>
+          <dd>week：{{date.lunar.week}}</dd>
+          <dd>start：{{date.lunar.start}}</dd>
+        </dl>
+        <span slot="reference" class="obj">点击</span>
+      </el-popover>
+    </template>
+  </calendar>
 
-<calendar ref="calendar" multiple :select-date="date"  :show-title="false">
-  <template slot="dateCell" slot-scope="{date}">
-    <el-popover
-      placement="right"
-      width="400"
-      trigger="click">
-      <dl>
-        <dt>属性：</dt>
-        <dd>date：{{date.date}}</dd>
-        <dd>year：{{date.year}}</dd>
-        <dd>month：{{date.month}}</dd>
-        <dd>day：{{date.day}}</dd>
-        <dd>weekDay：{{date.weekDay}}</dd>
-        <dd>gzD：{{date.lunar.gzD}}</dd>
-        <dd>gzY：{{date.lunar.gzY}}</dd>
-        <dd>lunarMonthChiness：{{date.lunar.lunarMonthChiness}}</dd>
-        <dd>lunarDayChiness：{{date.lunar.lunarDayChiness}}</dd>
-        <dd>animal：{{date.lunar.animal}}</dd>
-        <dd>week：{{date.lunar.week}}</dd>
-        <dd>start：{{date.lunar.start}}</dd>
-      </dl>
-      <span slot="reference" class="obj">点击</span>
-    </el-popover>
-  </template>
-</calendar>
-
-<el-row class="demonstration">
-选中日期：{{date}}
-</el-row>
-
+  <p class="demonstration">选中日期：{{date}}</p>
+</template>
 <script>
   export default {
     data() {
