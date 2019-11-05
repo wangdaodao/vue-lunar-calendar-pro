@@ -7,16 +7,71 @@
 
 ### 安装
 
+#### npm
+
 ```
 npm i vue-lunar-calendar-pro --save
 cnpm i vue-lunar-calendar-pro --save  //国内镜像
 ```
 
+#### script
+```
+<script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'>
+```
+
 ### 使用
 
+#### 全局使用
+
 ```
+//main.js
+import Vue from 'vue'
+import App from './App.vue'
+//...
+
 import Calandar from 'vue-lunar-calendar-pro'
 Vue.use(Calandar)
+
+//...
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+```
+
+```
+<!--app.vue-->
+<template>
+  <div id="app">
+    <calendar height="800px" width="800px"/>
+  </div>
+</template>
+
+<script>
+
+  export default {
+    name: 'App'
+  }
+</script>
+```
+
+#### 本地注册
+```
+<!--app.vue-->
+<template>
+  <div id="app">
+    <calendar height="800px" width="800px"/>
+  </div>
+</template>
+
+<script>
+  import Calendar from 'vue-lunar-calendar-pro'
+  export default {
+    name: 'App',
+    components:{Calendar}
+  }
+</script>
 ```
 
 🎉 觉得好用给一个 [star](https://github.com/wangdaodao/vue-lunar-calendar-pro) 哦~~ 🎉
