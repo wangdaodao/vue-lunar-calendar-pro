@@ -3,12 +3,16 @@
 * 基于 vue 2.0 开发的轻量，高性能日历组件,支持农历，节气，假日显示。
 * 原生 js 开发，没引入第三方库
 
+感谢：[calendar.js](https://github.com/jjonline/calendar.js)
+
 ### 安装
 
 ```
 npm i vue-lunar-calendar-pro --save
 cnpm i vue-lunar-calendar-pro --save  //国内镜像
 ```
+
+🎉 觉得好用给一个 [star](https://github.com/wangdaodao/vue-lunar-calendar-pro) 哦~~ 🎉
 
 ### 基本单选
 
