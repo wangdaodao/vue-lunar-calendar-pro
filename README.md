@@ -1,7 +1,9 @@
 ## Calendar 日历
 
-* 基于 vue 2.0 开发的轻量，高性能日历组件,支持农历，节气，假日显示。
-* 原生 js 开发，没引入第三方库
+* 基于 vue 2.0 开发的轻量，高性能日历组件；
+* 支持农历，节气，假日显示；
+* 原生 js 开发，无第三方库；
+* 支持现代浏览器(IE >= 9)；
 
 感谢：[calendar.js](https://github.com/jjonline/calendar.js)
 
