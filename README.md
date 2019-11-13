@@ -4,7 +4,7 @@
 * 😘 支持农历，节气，假日显示；
 * 😍 原生 js 开发，无第三方库；
 * 😂 支持现代浏览器(IE >= 9)；
-* 👍 感谢[calendar.js](https://github.com/jjonline/calendar.js)；
+* 👍 感谢[calendar.js](https://github.com/jjonline/calendar.js)，[vue-calendar](https://github.com/kylin-z/vue-calendar)；
 
 ### 安装
 
