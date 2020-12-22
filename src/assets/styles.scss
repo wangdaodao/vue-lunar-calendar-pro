@@ -2,7 +2,7 @@ $--color-primary: #1890FF !default;
 $--color-white: #fff!default;
 $--color-success:#66BF16 !default;
 $--calendar-weekend-background-color :#efefef !default;
-$--border-color-base:#D2D2D2 !default;
+$--border-color-base:#e8eaec !default;
 $--calendar-selected-background-color: mix($--color-white, $--color-primary, 90%) !default;
 $--calendar-selected-font-color :$--color-primary;
 $--color-success-lighter : mix($--color-white, $--color-success, 90%) !default;
@@ -27,72 +27,45 @@ $--color-text-placeholder: #999999 !default;
     clear: both;
   }
 }
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-html,body{
-  background-color: #fff;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 .calendar-pro {
   background-color:#fff;
   width: 100%;
   height: 100%;
   &__title {
     @include clear;
-    margin-bottom: 20px;
+    padding: 12px;
+    border-bottom: 1px solid #e8eaec;
   }
   &__title-info {
     @include float;
-    font-size: 20px;
-    font-weight: bolder;
+    color: #17233d;
+    font-size: 18px;
   }
   &__tool{
     @include float(right);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    button{
+      padding:0 15px;
+      border:1px solid #dcdee2;
+      color:#515a6e;
+      background-color: transparent;
+      position: relative;
+    }
+    button:hover{
+      color: #57a3f3;
+      background-color: #fff;
+      border-color: #57a3f3;
+      cursor: pointer;
+      z-index: 2;
+    }
+    button:first-child{
+      margin-left: 0px;
+    }
+    button+button{
+      margin-left: -1px;
+    }
   }
   &.showWeek{
     .weekend{
@@ -154,6 +127,7 @@ table {
         .info-festival{
           margin-top: 3px;
           text-align: center;
+          font-size:13px;
         }
         .info-lunar{
           position: absolute;
@@ -164,8 +138,9 @@ table {
           position: absolute;
           bottom: 10px;
           left: 10px;
+          font-size:14px;
         }
-        
+
       }
     }
   }
