@@ -23,7 +23,6 @@
 
 <script type="text/babel">
 /* eslint-disable no-unused-vars */
-// import ChineseCalendar from "../assets/ChineseCalendar.js";
 import calendarJs from "../assets/calendar";
 import Item from "./item.vue";
 import TitleBar from "./title-bar.vue";
@@ -417,9 +416,6 @@ export default {
           todayDate.getMonth() == thisDate.getMonth() &&
           todayDate.getDate() == thisDate.getDate();
 
-        //  var dateStr = `${year}-${this.twoDigit(month)}-${this.twoDigit(day)}`
-        //  let isSelect = this.selectDate.indexOf(dateStr);
-        //  let tempDate = thisDate.getFullYear()+"-"+this.twoDigit(thisDate.getMonth()+1)+"-"+this.twoDigit(thisDate.getDate());
         let tempDate = this.formatDate(thisDate);
         let isSelect = this.selectDate.indexOf(tempDate) >= 0 || false;
         let isHighlighter = this.highlighterDate.indexOf(tempDate) >= 0 || false;
@@ -450,13 +446,13 @@ export default {
           day: thisDate.getDate(),
           weekDay: thisDate.getDay(),
           astro: dateObj.astro, //星座
-          animal: dateObj.Animal,
+          animal: dateObj.Animal, // 属相
           gzDay: dateObj.gzDay, //天干地支
           gzMonth: dateObj.gzMonth, //天干地支
           gzYear: dateObj.gzYear, //天干地支
-          lunar: dateObj.IDayCn, // 农历
-          lunarMonth: dateObj.IMonthCn, // 农历
-          lunarFestival: dateObj.lunarFestival,
+          lunar: dateObj.IDayCn, // 农历日
+          lunarMonth: dateObj.IMonthCn, // 农历月
+          lunarFestival: dateObj.lunarFestival, // 节日
           festival: dateObj.festival, // 节日
           term: dateObj.Term, // 节气
           isToday,
