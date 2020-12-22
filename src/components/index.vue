@@ -22,9 +22,11 @@
 </template>
 
 <script type="text/babel">
-import ChineseCalendar from "./js/ChineseCalendar";
-import Item from "./Item";
-import TitleBar from "./TitleBar";
+/* eslint-disable no-unused-vars */
+// import ChineseCalendar from "../assets/ChineseCalendar.js";
+import calendarJs from "../assets/calendar";
+import Item from "./item.vue";
+import TitleBar from "./title-bar.vue";
 
 export default {
   name: "Calendar",
@@ -156,13 +158,17 @@ export default {
           day,
           weekDay,
           lunar,
+          lunarMonth,
+          astro,
+          animal,
+          gzDay,
+          gzMonth,
+          gzYear,
+          lunarFestival,
           festival,
           term,
-          renderMonth
+          renderMonth,
         } = data;
-
-        // 是否是初一
-        var isChuYi = lunar.lunarDay == 1;
 
         var boxClassName = `day-box
           ${isSelect ? "select" : ""}
@@ -171,16 +177,13 @@ export default {
           ${isToday ? "today" : ""}
           ${isWeekend ? "weekend" : ""}
           ${isOtherMonthDay ? "other-month-day" : ""} `;
-        var lunarClassName = `info-lunar ${isChuYi ? "lunar-first" : ""}`;
-
-        // 农历字符串
-        var lunarStr = isChuYi
-          ? lunar.lunarMonthChiness + lunar.lunarDayChiness
-          : lunar.lunarDayChiness;
 
         // 节日、节气
         var $festival = festival ? (
-          <div class="info-festival">{festival}</div>
+          <div>{festival}</div>
+        ) : null;
+        var $lunarFestival = lunarFestival ? (
+          <div>{lunarFestival}</div>
         ) : null;
         var $term = term ? <div class="info-term">{term}</div> : null;
 
@@ -189,9 +192,9 @@ export default {
         return (
           <div class={boxClassName}>
             <div class="info-date">{$date}</div>
-            {this.showFestival ? $festival : null}
+            {this.showFestival ? <div class="info-festival">{$festival}{$lunarFestival}</div> : null}
             {this.showLunar ? (
-              <div class={lunarClassName}>{lunarStr}</div>
+              <div class="info-lunar ">{lunar}</div>
             ) : null}
             {this.showTerm ? $term : null}
           </div>
@@ -276,7 +279,7 @@ export default {
         beforeRender(year, month, setInfo);
       } else {
         setInfo();
-      };
+      }
     },
     //  日期格式化yyyy-mm-dd
     formatDate: function(date) {
@@ -327,7 +330,7 @@ export default {
             firstDate.setDate(2 - weekDay);
           } else {
             firstDate.setDate(weekDay - 5);
-          };
+          }
           break;
         case 2:
           this.weekTitle = ["二", "三", "四", "五", "六", "日", "一"];
@@ -337,7 +340,7 @@ export default {
             firstDate.setDate(3 - weekDay);
           } else {
             firstDate.setDate(weekDay - 4);
-          };
+          }
           break;
         case 3:
           this.weekTitle = ["三", "四", "五", "六", "日", "一", "二"];
@@ -349,7 +352,7 @@ export default {
             firstDate.setDate(4 - weekDay);
           } else {
             firstDate.setDate(weekDay - 3);
-          };
+          }
           break;
         case 4:
           this.weekTitle = ["四", "五", "六", "日", "一", "二", "三"];
@@ -363,7 +366,7 @@ export default {
             firstDate.setDate(5 - weekDay);
           } else {
             firstDate.setDate(weekDay - 2);
-          };
+          }
           break;
         case 5:
           this.weekTitle = ["五", "六", "日", "一", "二", "三", "四"];
@@ -377,7 +380,7 @@ export default {
             firstDate.setDate(6 - weekDay);
           } else {
             firstDate.setDate(weekDay - 1);
-          };
+          }
           break;
         case 6:
           this.weekTitle = ["六", "日", "一", "二", "三", "四", "五"];
@@ -395,9 +398,9 @@ export default {
             firstDate.setDate(weekDay - 10);
           } else {
             firstDate.setDate(weekDay - 5);
-          };
+          }
           break;
-      };
+      }
       // 该月要显示的所有日期对象数组,包括前后月补完
       var monthDays = [];
 
@@ -431,14 +434,14 @@ export default {
           isDisabled = this.disabledDate.indexOf(tempDate) >= 0;
         } else {
           isDisabled = false;
-        };
+        }
         // console.log("isSelect",isSelect)
         var defaultDate = new Date(this.defaultDate);
         let isDefaultDate =
           defaultDate.getFullYear() == defaultDate.getFullYear() &&
           defaultDate.getMonth() == defaultDate.getMonth() &&
           defaultDate.getDate() == defaultDate.getDate();
-
+        let dateObj = calendarJs.solar2lunar(thisDate.getFullYear(),thisDate.getMonth()+1,thisDate.getDate());
         monthDays.push({
           // 当前日期信息
           date: thisDate,
@@ -446,10 +449,16 @@ export default {
           month: thisDate.getMonth() + 1,
           day: thisDate.getDate(),
           weekDay: thisDate.getDay(),
-          lunar: ChineseCalendar.date2lunar(thisDate), // 农历
-          festival: ChineseCalendar.lunarFestival(thisDate), // 节日
-          term: ChineseCalendar.lunarTerm(thisDate), // 节气
-          // a:ChineseCalendar.getTerm(thisDate.getFullYear(),(thisDate.getMonth())*2 -1), // 节气
+          astro: dateObj.astro, //星座
+          animal: dateObj.Animal,
+          gzDay: dateObj.gzDay, //天干地支
+          gzMonth: dateObj.gzMonth, //天干地支
+          gzYear: dateObj.gzYear, //天干地支
+          lunar: dateObj.IDayCn, // 农历
+          lunarMonth: dateObj.IMonthCn, // 农历
+          lunarFestival: dateObj.lunarFestival,
+          festival: dateObj.festival, // 节日
+          term: dateObj.Term, // 节气
           isToday,
           // 是否是默认的那天
           isDefaultDate,
@@ -462,9 +471,8 @@ export default {
           isOtherMonthDay: thisDate.getMonth() + 1 != month,
           // 当前面板渲染的年、月
           renderYear: year,
-          renderMonth: month
+          renderMonth: month,
         });
-
         cursor.setDate(day + 1);
       }
       // console.log("monthDays", monthDays);
@@ -509,10 +517,10 @@ export default {
     }
   },
   watch: {
-    renderYear(year, oldYear) {
+    renderYear(year) {
       this.$emit("year-change", year, this.renderMonth);
     },
-    renderMonth(month, oldMonth) {
+    renderMonth(month) {
       this.$emit("month-change", this.renderYear, month);
     },
     defaultDate(date) {

@@ -7,7 +7,7 @@
     },
     render(h) {
 
-      var parent, {renderTitle, _renderProxy} = this.$parent;
+      var {renderTitle, _renderProxy} = this.$parent;
 
       return renderTitle.call(_renderProxy, h, this.year,this.month);
 
