@@ -1,15 +1,19 @@
 {
   "name": "vue-lunar-calendar-pro",
   "description": "A lunar calendar component for Vue.js",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "private": false,
   "main": "dist/calendar.common.js",
+  "browser": "dist/calendar.umd.js",
   "style": "dist/calendar.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/wangdaodao/vue-lunar-calendar-pro"
+  },
+  "bugs": {
+    "url": "https://github.com/wangdaodao/vue-lunar-calendar-pro/issues"
   },
   "keywords": [
     "calendar",
@@ -19,7 +23,6 @@
   "scripts": {
     "package": "vue-cli-service build --target lib --name calendar ./src/components/main.js",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
