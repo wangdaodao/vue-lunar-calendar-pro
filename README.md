@@ -4,7 +4,7 @@
 * 😘 支持农历，节气，假日显示；
 * 😍 原生 js 开发，无第三方库；
 * 😂 支持现代浏览器(IE >= 9)；
-* 👍 感谢[calendar.js](https://github.com/jjonline/calendar.js)，[vue-calendar](https://github.com/kylin-z/vue-calendar)；
+* 👍 感谢[calendar.js](https://github.com/jjonline/calendar.js)
 
 ### 安装
 
@@ -24,10 +24,10 @@ cnpm i vue-lunar-calendar-pro --save
 
 ```html
 <!-- 这里会始终引用最新版本 -->
-<script src='https://unpkg.com/vue-lunar-calendar-pro/dist/vue-calendar.js'></script>
+<script src='https://unpkg.com/vue-lunar-calendar-pro/dist/calendar.umd.js'></script>
 
-<!-- 这里会引用 1.0.7 版本 -->
-<script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.7/dist/vue-calendar.js'></script>
+<!-- 这里会引用 1.0.15 版本 -->
+<script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.15/dist/calendar.umd.js'></script>
 ```
 
 ### 使用
