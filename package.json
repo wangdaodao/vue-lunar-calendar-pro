@@ -6,10 +6,14 @@
   "license": "MIT",
   "private": false,
   "main": "dist/calendar.common.js",
+  "browser": "dist/calendar.umd.js",
   "style": "dist/calendar.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/wangdaodao/vue-lunar-calendar-pro"
+  },
+  "bugs": {
+    "url": "https://github.com/wangdaodao/vue-lunar-calendar-pro/issues"
   },
   "keywords": [
     "calendar",
