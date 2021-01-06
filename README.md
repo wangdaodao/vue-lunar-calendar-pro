@@ -89,7 +89,7 @@ new Vue({
 
 🔸 设置 `default-date` 来指定当前显示的月份。如果 `default-date` 未指定，则显示当月。
 
-demo1: [demo1](http://demo.const.team/calendar/demo1.html)
+基本单选: [demo1](http://demo.const.team/calendar/demo1.html)
 
 ```html
 <template>
@@ -115,7 +115,7 @@ demo1: [demo1](http://demo.const.team/calendar/demo1.html)
 
 🔸 设置 `multiple` 开启日期多选。
 
-demo1: [demo2](http://demo.const.team/calendar/demo2.html)
+基本多选: [demo2](http://demo.const.team/calendar/demo2.html)
 
 ```html
 <template>
@@ -139,7 +139,7 @@ demo1: [demo2](http://demo.const.team/calendar/demo2.html)
 
 🔸 设置 `first-day-of-week` 来指定周起始日。如果 `first-day-of-week` 未指定则按照周日为起始日。
 
-demo3: [demo3](http://demo.const.team/calendar/demo3.html)
+设置周起始日: [demo3](http://demo.const.team/calendar/demo3.html)
 
 ```html
 <template>
@@ -163,7 +163,7 @@ demo3: [demo3](http://demo.const.team/calendar/demo3.html)
 
 🔸 设置 `highlighter-date` 高亮日期。
 
-demo4: [demo4](http://demo.const.team/calendar/demo4.html)
+高亮日期: [demo4](http://demo.const.team/calendar/demo4.html)
 
 ```html
 <template>
@@ -189,7 +189,7 @@ demo4: [demo4](http://demo.const.team/calendar/demo4.html)
 
 🔸 设置 `disabled-date` 来指定当哪些日期不可选。
 
-demo5: [demo5](http://demo.const.team/calendar/demo5.html)
+某些日期不可选: [demo5](http://demo.const.team/calendar/demo5.html)
 
 ```html
 <template>
@@ -215,7 +215,7 @@ demo5: [demo5](http://demo.const.team/calendar/demo5.html)
 
 🔸 设置 `max-date` 和 `min-date` 来设置日期区间。
 
-demo6: [demo6](http://demo.const.team/calendar/demo6.html)
+设置日期区间: [demo6](http://demo.const.team/calendar/demo6.html)
 
 ```html
 <template>
@@ -238,11 +238,11 @@ demo6: [demo6](http://demo.const.team/calendar/demo6.html)
 </script>
 ```
 
-## Render方法
+## 自定义Render
 
 🔸 内置 `render` 方法，参数为`year, month`，配合其他组件使用。另外，通过设置名为 `dateCell` 的 `scoped-slot` 来自定义日历单元格中显示的内容。在 `scoped-slot` 可以获取到 `date`（当前单元格的日期对象），详情解释参考下方的 `API` 文档。
 
-demo7: [demo7](http://demo.const.team/calendar/demo7.html)
+自定义Render: [demo7](http://demo.const.team/calendar/demo7.html)
 
 ```html
 <template>
