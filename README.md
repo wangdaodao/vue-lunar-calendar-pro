@@ -24,10 +24,14 @@ npm i vue-lunar-calendar-pro --save
 
 ```html
 <!-- 这里会始终引用最新版本 -->
+<link href="https://unpkg.com/vue-lunar-calendar-pro/dist/calendar.css" rel="stylesheet" />
 <script src='https://unpkg.com/vue-lunar-calendar-pro/dist/calendar.umd.js'></script>
+
+<link href="https://cdn.jsdelivr.net/npm/vue-lunar-calendar-pro/dist/calendar.css" rel="stylesheet" />
 <script src='https://cdn.jsdelivr.net/npm/vue-lunar-calendar-pro/dist/calendar.umd.js'></script>
 
 <!-- 这里会引用 1.0.15 版本 -->
+<link href="https://unpkg.com/vue-lunar-calendar-pro@1.0.15/dist/calendar.css" rel="stylesheet" />
 <script src='https://unpkg.com/vue-lunar-calendar-pro@1.0.15/dist/calendar.umd.js'></script>
 ```
 
@@ -40,7 +44,7 @@ npm i vue-lunar-calendar-pro --save
 import Vue from 'vue'
 import App from './App.vue'
 // ...
-
+import 'vue-lunar-calendar-pro/dist/calendar.css';
 import Calandar from 'vue-lunar-calendar-pro'
 Vue.use(Calandar)
 
