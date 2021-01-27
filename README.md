@@ -333,6 +333,11 @@ new Vue({
 | month-change  | 当前渲染的月份变化时会触发该事件  |  year,month |
 | date-click  | 点击某个日期格子时会触发该事件  |  date |
 
+## Slot
+| 参数	| 说明 |
+|---|---|
+| dateCell  | 当前单元格的日期对象  |
+
 ## Date
 
 | 字段	| 说明  |
