@@ -81,6 +81,7 @@ new Vue({
 </template>
 
 <script>
+  import 'vue-lunar-calendar-pro/dist/calendar.css';
   import Calendar from 'vue-lunar-calendar-pro'
   export default {
     name: 'App',
