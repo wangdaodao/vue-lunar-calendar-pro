@@ -1,6 +1,6 @@
 # Calendar 日历
 
-![NPM version](https://img.shields.io/npm/v/vue-lunar-calendar-pro.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-lunar-calendar-pro.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-lunar-calendar-pro.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-lunar-calendar-pro.svg)
+![NPM Publish](https://github.com/wangdaodao/vue-lunar-calendar-pro/actions/workflows/npm-publish.yml/badge.svg) ![NPM version](https://img.shields.io/npm/v/vue-lunar-calendar-pro.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-lunar-calendar-pro.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-lunar-calendar-pro.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-lunar-calendar-pro.svg)
 
 * 😊 基于 vue 2.0 开发的轻量，高性能日历组件；
 * 😘 支持农历，节气，假日显示；
